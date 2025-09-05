@@ -41,12 +41,11 @@
 
 /* Base Typography */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
 }
-
 /* Container Class */
 .container {
     max-width: 1400px;
