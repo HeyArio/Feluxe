@@ -27,17 +27,19 @@
     <!-- Add this in your <head> -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+
 <header>
-  <nav class="navbar">
-    <!-- Left side: Logo -->
+  <nav>
+    <!-- Left: Logo -->
     <div class="logo">
       <img src="assets/images/3fb339ba-df08-4a3f-9acb-70be938d3b71.png" alt="Feluxe Logo">
       <h1>FELUXE</h1>
     </div>
 
-    <!-- Middle: Cat Animation -->
-    <div class="cat-center">
+    <!-- Center: Cat Animation with Audio -->
+    <div id="catWrapper" class="cat-center">
       <lottie-player 
+        id="catAnimation"
         src="cat-animation.json"
         background="transparent"
         speed="1"
@@ -47,20 +49,8 @@
       </lottie-player>
       <audio id="catMeow" src="cat-meow-8-fx-306184.mp3"></audio>
     </div>
-    <div id="catWrapper" class="cat-center">
-  <lottie-player 
-    id="catAnimation"
-    src="cat-animation.json"   <!-- replace with your Lottie file path -->
-    loop
-    autoplay>
-  </lottie-player>
 
-  <!-- audio file -->
-  <audio id="catMeow" src="cat-meow-8-fx-306184.mp3"></audio>
-</div>
-
-
-    <!-- Right side: Navigation links -->
+    <!-- Right: Desktop Navigation -->
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#products">Products</a></li>
@@ -68,7 +58,25 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#catalog">Catalog</a></li>
     </ul>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#catalog">Catalog</a></li>
+    </ul>
+  </div>
 </header>
 
 
@@ -254,41 +262,94 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Enhanced Contact Section -->
     <section id="contact" class="contact fade-in">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <div class="contact-info" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+            
+            <!-- Main Email CTA -->
+            <div class="email-cta-section">
+                <div class="email-cta-card">
+                    <div class="email-cta-content">
+                        <h3>Ready to Partner with Us?</h3>
+                        <p>Get in touch for wholesale pricing, distribution opportunities, and custom solutions.</p>
+                        <div class="email-actions">
+                            <a href="mailto:info@feluxe.com?subject=Partnership Inquiry - Feluxe Cat Litter&body=Hello Feluxe Team,%0D%0A%0D%0AI am interested in learning more about partnership opportunities with Feluxe Cat Litter.%0D%0A%0D%0ACompany:%0D%0ACountry:%0D%0AType of inquiry:%0D%0A%0D%0APlease provide more information about your products and partnership terms.%0D%0A%0D%0AThank you," 
+                               class="email-primary-btn">
+                                <i class="fas fa-envelope"></i>
+                                Email Us: info@feluxe.com
+                            </a>
+                            <button class="email-copy-btn" onclick="copyEmail()">
+                                <i class="fas fa-copy"></i>
+                                Copy Email
+                            </button>
                         </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>info@feluxe.com</p>
-                            <p>For all business inquiries and partnership opportunities</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe-americas"></i>
-                        </div>
-                        <div>
-                            <h3>Global Reach</h3>
-                            <p>Worldwide Export Services</p>
-                            <p>Professional logistics solutions to 60+ countries</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                        <div class="response-time">
                             <i class="fas fa-clock"></i>
+                            <span>We respond within 24 hours</span>
                         </div>
-                        <div>
-                            <h3>Business Hours</h3>
-                            <p>24/7 Customer Support</p>
-                            <p>Always available for our international partners</p>
-                        </div>
+                    </div>
+                    <div class="email-cta-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info Grid -->
+            <div class="contact-info-grid">
+                <div class="contact-item enhanced">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Business Email</h3>
+                        <a href="mailto:info@feluxe.com" class="contact-email-link">info@feluxe.com</a>
+                        <p>For partnership inquiries and wholesale orders</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item enhanced">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Global Export Services</h3>
+                        <p class="highlight-text">60+ Countries Served</p>
+                        <p>Professional logistics solutions worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item enhanced">
+                    <div class="contact-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Customer Support</h3>
+                        <p class="highlight-text">24/7 Availability</p>
+                        <p>Always available for our international partners</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partnership Benefits -->
+            <div class="partnership-benefits">
+                <h3>Why Partner with Feluxe?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-award"></i>
+                        <span>Premium Quality Products</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Reliable Global Shipping</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Competitive Wholesale Pricing</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Custom Solutions Available</span>
                     </div>
                 </div>
             </div>
@@ -314,6 +375,70 @@
     meow.play();
   });
 </script>
+<!-- Enhanced PDF Viewer Modal with Smooth Zoom - Replace existing PDF modal -->
+    <div id="pdf-modal" class="pdf-modal">
+        <div class="pdf-container">
+            <!-- Header -->
+            <div class="pdf-header">
+                <h3 class="pdf-title">Feluxe Product Catalog</h3>
+                <button class="pdf-close" id="pdf-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- PDF Viewer -->
+            <div class="pdf-viewer">
+                <div class="pdf-loading" id="pdf-loading">
+                    <div class="spinner"></div>
+                    <p>Loading catalog...</p>
+                </div>
+                <div class="pdf-canvas-container">
+                    <canvas id="pdf-canvas"></canvas>
+                </div>
+            </div>
+            
+            <!-- Enhanced Controls with Zoom Slider -->
+            <div class="pdf-controls">
+                <div class="pdf-navigation">
+                    <button class="pdf-nav-btn" id="prev-page">Previous</button>
+                    <span class="pdf-page-info" id="page-info">Page 1 of 1</span>
+                    <button class="pdf-nav-btn" id="next-page">Next</button>
+                </div>
+                
+                <div class="pdf-zoom-controls">
+                    <button class="pdf-zoom-btn" id="zoom-out" title="Zoom Out">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    
+                    <div class="zoom-slider-container">
+                        <input type="range" 
+                               id="zoom-slider" 
+                               class="zoom-slider"
+                               min="50" 
+                               max="200" 
+                               value="100" 
+                               step="5">
+                        <span class="zoom-info" id="zoom-info">100%</span>
+                    </div>
+                    
+                    <button class="pdf-zoom-btn" id="zoom-in" title="Zoom In">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    
+                    <button class="pdf-fit-btn" id="fit-width" title="Fit to Width">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </button>
+                </div>
+                
+                <button class="pdf-download-btn" id="pdf-download">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </button>
+            </div>
+        </div>
+    </div>
 
-</body>
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    
 </html>

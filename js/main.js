@@ -67,6 +67,9 @@ function initializeWebsite() {
     setupFormHandling();
     setupPawPrintAnimation();
     setupCatalogInteractions();
+    setupMobileMenu();
+    setupPDFViewer();
+    setupEnhancedContact()
 }
 
 /* ===========================================
@@ -444,3 +447,534 @@ if (window.location.hostname === 'localhost' || window.location.hostname === '12
 //     setupFormHandling,
 //     setupPawPrintAnimation
 // };
+
+/* ===========================================
+   MOBILE MENU FUNCTIONALITY - ADD THIS TO YOUR main.js
+   =========================================== */
+function setupMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (!mobileToggle || !mobileMenu) return;
+    
+    // Toggle menu on hamburger click
+    mobileToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        this.classList.toggle('active');
+    });
+
+    // Close menu when clicking menu links
+    const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+        }
+    });
+}
+
+// DON'T FORGET: Add setupMobileMenu() to your initializeWebsite() function
+// Update your existing initializeWebsite() function to include this:
+/*
+function initializeWebsite() {
+    setupSmoothScrolling();
+    setupHeaderEffects();
+    setupScrollAnimations();
+    setupFormHandling();
+    setupPawPrintAnimation();
+    setupCatalogInteractions();
+    setupMobileMenu(); // ADD THIS LINE
+}
+*/
+/* ===========================================
+   MOBILE MENU FUNCTIONALITY - ADD TO main.js
+   =========================================== */
+function setupMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (!mobileToggle || !mobileMenu) return;
+    
+    // Toggle menu on hamburger click
+    mobileToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        this.classList.toggle('active');
+    });
+
+    // Close menu when clicking menu links
+    const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+        }
+    });
+}
+
+/* ===========================================
+   UPDATE YOUR EXISTING initializeWebsite() FUNCTION
+   Make sure it includes setupMobileMenu()
+   =========================================== */
+
+// Find your existing initializeWebsite() function and make it look like this:
+/*
+function initializeWebsite() {
+    setupSmoothScrolling();
+    setupHeaderEffects();
+    setupScrollAnimations();
+    setupFormHandling();
+    setupPawPrintAnimation();
+    setupCatalogInteractions();
+    setupMobileMenu(); // ADD THIS LINE
+}
+*/
+/* ===========================================
+   PDF VIEWER FUNCTIONALITY - ADD TO main.js
+   =========================================== */
+
+/* ===========================================
+   ENHANCED PDF VIEWER WITH ZOOM CONTROLS
+   Replace the PDF viewer section in main.js
+   =========================================== */
+
+/* ===========================================
+   SMOOTH ZOOM PDF VIEWER - REPLACE PDF section in main.js
+   =========================================== */
+
+let pdfDoc = null;
+let pageNum = 1;
+let pageRendering = false;
+let pageNumPending = null;
+let scale = 1.0;
+let canvas = null;
+let ctx = null;
+
+function setupPDFViewer() {
+    // Initialize PDF.js
+    if (typeof pdfjsLib !== 'undefined') {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    
+    // Get DOM elements
+    const modal = document.getElementById('pdf-modal');
+    const closeBtn = document.getElementById('pdf-close');
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    const pageInfo = document.getElementById('page-info');
+    const downloadBtn = document.getElementById('pdf-download');
+    const loading = document.getElementById('pdf-loading');
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const fitWidthBtn = document.getElementById('fit-width');
+    const zoomSlider = document.getElementById('zoom-slider');
+    const zoomInfo = document.getElementById('zoom-info');
+    
+    canvas = document.getElementById('pdf-canvas');
+    ctx = canvas.getContext('2d');
+    
+    if (!modal || !canvas) return;
+    
+    // Event listeners
+    closeBtn.addEventListener('click', closePDFViewer);
+    prevBtn.addEventListener('click', onPrevPage);
+    nextBtn.addEventListener('click', onNextPage);
+    downloadBtn.addEventListener('click', downloadPDF);
+    zoomInBtn.addEventListener('click', zoomIn);
+    zoomOutBtn.addEventListener('click', zoomOut);
+    fitWidthBtn.addEventListener('click', fitToWidth);
+    
+    // Zoom slider event listener
+    zoomSlider.addEventListener('input', function(e) {
+        const newScale = parseInt(e.target.value) / 100;
+        setZoom(newScale);
+    });
+    
+    // Mouse wheel zoom in PDF viewer
+    const pdfViewer = document.querySelector('.pdf-viewer');
+    pdfViewer.addEventListener('wheel', function(e) {
+        if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            
+            if (e.deltaY < 0) {
+                // Scroll up - zoom in
+                const newScale = Math.min(scale * 1.1, 3.0);
+                setZoom(newScale);
+            } else {
+                // Scroll down - zoom out
+                const newScale = Math.max(scale * 0.9, 0.3);
+                setZoom(newScale);
+            }
+        }
+    });
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closePDFViewer();
+        }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            closePDFViewer();
+        }
+    });
+    
+    // Update catalog buttons to open PDF viewer
+    const catalogButtons = document.querySelectorAll('.catalog-btn');
+    catalogButtons.forEach(button => {
+        if (button.textContent.includes('View Full Catalog')) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                openPDFViewer();
+            });
+        }
+    });
+}
+
+function openPDFViewer() {
+    const modal = document.getElementById('pdf-modal');
+    const loading = document.getElementById('pdf-loading');
+    
+    modal.classList.add('open');
+    loading.classList.add('show');
+    
+    // Reset to first page
+    pageNum = 1;
+    
+    // Load PDF
+    const pdfPath = 'assets/pdfs/YASI CATALOUGE.pdf';
+    
+    if (typeof pdfjsLib !== 'undefined') {
+        pdfjsLib.getDocument(pdfPath).promise.then(function(pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            
+            // Auto-fit to width on first load
+            autoFitToWidth().then(() => {
+                document.getElementById('page-info').textContent = `Page ${pageNum} of ${pdfDoc.numPages}`;
+                renderPage(pageNum);
+                loading.classList.remove('show');
+            });
+        }).catch(function(error) {
+            console.error('Error loading PDF:', error);
+            loading.innerHTML = `
+                <div style="color: white; text-align: center;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <p>Unable to load catalog. Please try downloading instead.</p>
+                </div>
+            `;
+        });
+    } else {
+        console.error('PDF.js not loaded');
+        loading.innerHTML = `
+            <div style="color: white; text-align: center;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <p>PDF viewer not available. Please download instead.</p>
+            </div>
+        `;
+    }
+}
+
+function autoFitToWidth() {
+    return new Promise((resolve) => {
+        if (!pdfDoc) {
+            resolve();
+            return;
+        }
+        
+        pdfDoc.getPage(1).then(function(page) {
+            const viewer = document.querySelector('.pdf-viewer');
+            const viewerWidth = viewer.clientWidth - 60; // Account for padding
+            const viewport = page.getViewport({scale: 1.0});
+            
+            scale = viewerWidth / viewport.width;
+            
+            // Limit scale between 0.3 and 3.0
+            scale = Math.max(0.3, Math.min(3.0, scale));
+            
+            updateZoomControls();
+            resolve();
+        });
+    });
+}
+
+function renderPage(num) {
+    pageRendering = true;
+    
+    // Using promise to fetch the page
+    pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({scale: scale});
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        // Render PDF page into canvas context
+        const renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+        };
+        
+        const renderTask = page.render(renderContext);
+        
+        // Wait for rendering to finish
+        renderTask.promise.then(function() {
+            pageRendering = false;
+            if (pageNumPending !== null) {
+                // New page rendering is pending
+                renderPage(pageNumPending);
+                pageNumPending = null;
+            }
+        });
+    });
+    
+    // Update page counters
+    document.getElementById('page-info').textContent = `Page ${num} of ${pdfDoc.numPages}`;
+    
+    // Update button states
+    document.getElementById('prev-page').disabled = (num <= 1);
+    document.getElementById('next-page').disabled = (num >= pdfDoc.numPages);
+}
+
+function queueRenderPage(num) {
+    if (pageRendering) {
+        pageNumPending = num;
+    } else {
+        renderPage(num);
+    }
+}
+
+function onPrevPage() {
+    if (pageNum <= 1) {
+        return;
+    }
+    pageNum--;
+    queueRenderPage(pageNum);
+}
+
+function onNextPage() {
+    if (pageNum >= pdfDoc.numPages) {
+        return;
+    }
+    pageNum++;
+    queueRenderPage(pageNum);
+}
+
+function setZoom(newScale) {
+    scale = Math.max(0.3, Math.min(3.0, newScale));
+    updateZoomControls();
+    queueRenderPage(pageNum);
+}
+
+function zoomIn() {
+    const newScale = Math.min(scale * 1.1, 3.0); // Smaller increment: 1.1 instead of 1.25
+    setZoom(newScale);
+}
+
+function zoomOut() {
+    const newScale = Math.max(scale * 0.9, 0.3); // Smaller increment: 0.9 instead of 0.8
+    setZoom(newScale);
+}
+
+function fitToWidth() {
+    autoFitToWidth().then(() => {
+        queueRenderPage(pageNum);
+    });
+}
+
+function updateZoomControls() {
+    const zoomPercent = Math.round(scale * 100);
+    const zoomInfo = document.getElementById('zoom-info');
+    const zoomSlider = document.getElementById('zoom-slider');
+    
+    if (zoomInfo) {
+        zoomInfo.textContent = `${zoomPercent}%`;
+    }
+    
+    if (zoomSlider) {
+        zoomSlider.value = zoomPercent;
+    }
+}
+
+function closePDFViewer() {
+    const modal = document.getElementById('pdf-modal');
+    const loading = document.getElementById('pdf-loading');
+    
+    modal.classList.remove('open');
+    loading.classList.remove('show');
+    
+    // Clear canvas
+    if (ctx && canvas) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    
+    // Reset variables
+    pdfDoc = null;
+    pageNum = 1;
+    pageRendering = false;
+    pageNumPending = null;
+    scale = 1.0;
+    
+    // Reset zoom controls
+    const zoomSlider = document.getElementById('zoom-slider');
+    const zoomInfo = document.getElementById('zoom-info');
+    if (zoomSlider) zoomSlider.value = 100;
+    if (zoomInfo) zoomInfo.textContent = '100%';
+}
+
+function downloadPDF() {
+    // Create download link
+    const link = document.createElement('a');
+    link.href = 'assets/pdfs/YASI CATALOUGE.pdf';
+    link.download = 'Feluxe-Product-Catalog.pdf';
+    link.target = '_blank';
+    
+    // Trigger download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show feedback
+    showNotification('Catalog download started!', 'success');
+}
+/* ===========================================
+   EMAIL COPY FUNCTIONALITY - ADD TO main.js
+   =========================================== */
+
+function copyEmail() {
+    const email = 'info@feluxe.com';
+    
+    // Try to use the Clipboard API first (modern browsers)
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(() => {
+            showCopySuccess();
+        }).catch(() => {
+            fallbackCopyTextToClipboard(email);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopyTextToClipboard(email);
+    }
+}
+
+function fallbackCopyTextToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    
+    // Avoid scrolling to bottom
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showCopySuccess();
+        } else {
+            showCopyError();
+        }
+    } catch (err) {
+        showCopyError();
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showCopySuccess() {
+    // Update button temporarily
+    const copyBtn = document.querySelector('.email-copy-btn');
+    if (copyBtn) {
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        copyBtn.style.background = 'rgba(76, 175, 80, 0.2)';
+        copyBtn.style.borderColor = 'rgba(76, 175, 80, 0.5)';
+        
+        setTimeout(() => {
+            copyBtn.innerHTML = originalHTML;
+            copyBtn.style.background = 'transparent';
+            copyBtn.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+        }, 2000);
+    }
+    
+    // Show notification
+    showNotification('Email address copied to clipboard!', 'success');
+}
+
+function showCopyError() {
+    showNotification('Unable to copy email. Please select and copy manually: info@feluxe.com', 'error');
+}
+
+function setupEnhancedContact() {
+    // Make email links more prominent
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Track email clicks (you can add analytics here)
+            console.log('Email link clicked:', this.href);
+        });
+    });
+    
+    // Add click tracking for the main CTA
+    const emailCTA = document.querySelector('.email-primary-btn');
+    if (emailCTA) {
+        emailCTA.addEventListener('click', function() {
+            console.log('Main email CTA clicked');
+            // You can add analytics tracking here
+        });
+    }
+}
+
+/* ===========================================
+   UPDATE YOUR initializeWebsite() FUNCTION
+   =========================================== */
+
+// Make sure your initializeWebsite() function includes setupEnhancedContact():
+/*
+function initializeWebsite() {
+    setupSmoothScrolling();
+    setupHeaderEffects();
+    setupScrollAnimations();
+    setupFormHandling();
+    setupPawPrintAnimation();
+    setupCatalogInteractions();
+    setupMobileMenu();
+    setupPDFViewer();
+    setupEnhancedContact(); // ADD THIS LINE
+}
+*/

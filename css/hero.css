@@ -18,6 +18,10 @@
     color: white;
     position: relative;
     overflow: hidden;
+    padding-top: 120px; /* Accounts for fixed header */
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 /* Hero Background Pattern */
@@ -55,6 +59,7 @@
     z-index: 2;
     position: relative;
     animation: fadeInUp 1.2s ease-out;
+    padding: 1rem;
 }
 
 .hero h1 {
@@ -63,6 +68,7 @@
     font-weight: 800;
     letter-spacing: -0.03em;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
 }
 
 .hero .subtitle {
@@ -75,7 +81,9 @@
 
 /* CTA Button */
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 18px 40px;
     background: transparent;
     color: white;
@@ -88,6 +96,8 @@
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    min-height: 54px;
+    min-width: 200px;
 }
 
 .cta-button::before {
@@ -109,4 +119,67 @@
     transform: translateY(-3px);
     border-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 1rem;
+        min-height: 90vh;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-button {
+        padding: 14px 28px;
+        font-size: 1rem;
+        min-width: 180px;
+        min-height: 50px;
+    }
+    
+    .hero-content {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 80px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        min-width: 160px;
+        min-height: 48px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-button {
+        min-width: 140px;
+        padding: 10px 20px;
+    }
 }

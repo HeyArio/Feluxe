@@ -441,70 +441,358 @@
     font-size: 1.2rem;
 }
 
-/* Contact Section */
+/* ===========================================
+   ENHANCED CONTACT SECTION - REPLACE contact CSS in sections.css
+   =========================================== */
+
 .contact {
     padding: 6rem 0;
     background: linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 50%, var(--background-gray) 100%);
 }
 
-.contact-content {
+/* Main Email CTA Section */
+.email-cta-section {
+    margin: 4rem auto;
+    max-width: 800px;
+}
+
+.email-cta-card {
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    border-radius: var(--border-radius-xl);
+    padding: 3rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(160, 67, 140, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.email-cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: move 15s linear infinite;
+    opacity: 0.5;
+}
+
+.email-cta-content {
+    flex: 1;
+    z-index: 2;
+    position: relative;
+}
+
+.email-cta-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.email-cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.email-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.email-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+    background: white;
+    color: var(--primary-purple);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: var(--transition-medium);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    justify-content: center;
+}
+
+.email-primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: #f8f6ff;
+}
+
+.email-copy-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.email-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.response-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    display: inline-flex;
+}
+
+.email-cta-icon {
+    font-size: 4rem;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Contact Info Grid */
+.contact-info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem auto;
+    max-width: 1000px;
 }
 
-.contact-info {
-    space-y: 2rem;
-}
-
-.contact-item {
+.contact-item.enhanced {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 10px 30px rgba(160, 67, 140, 0.1);
+    transition: var(--transition-medium);
+    border: 1px solid rgba(160, 67, 140, 0.1);
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: white;
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 5px 20px rgba(160, 67, 140, 0.12);
-    transition: var(--transition-fast);
 }
 
-.contact-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(160, 67, 140, 0.2);
+.contact-item.enhanced:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(160, 67, 140, 0.2);
+    border-color: var(--primary-purple);
 }
 
 .contact-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    border-radius: 12px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(160, 67, 140, 0.3);
 }
 
-.contact-item h3 {
+.contact-details h3 {
     color: var(--primary-blue);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
-.contact-item p {
-    color: var(--text-light);
-    line-height: 1.5;
+.contact-email-link {
+    color: var(--primary-purple);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: var(--transition-fast);
 }
 
-.contact-form {
+.contact-email-link:hover {
+    color: var(--secondary-purple);
+    text-decoration: underline;
+}
+
+.highlight-text {
+    color: var(--primary-purple);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Partnership Benefits */
+.partnership-benefits {
     background: white;
     padding: 3rem;
-    border-radius: var(--border-radius-large);
-    box-shadow: 0 15px 50px rgba(160, 67, 140, 0.1);
+    border-radius: var(--border-radius-xl);
+    box-shadow: 0 15px 40px rgba(160, 67, 140, 0.1);
+    margin: 4rem auto 0;
+    max-width: 900px;
+    text-align: center;
+}
+
+.partnership-benefits h3 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius-medium);
+    transition: var(--transition-fast);
+}
+
+.benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(160, 67, 140, 0.15);
+}
+
+.benefit-item i {
+    font-size: 2rem;
+    color: var(--primary-purple);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-item span {
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .email-cta-card {
+        flex-direction: column;
+        padding: 2.5rem 2rem;
+        text-align: center;
+    }
+    
+    .email-cta-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .email-cta-content p {
+        font-size: 1.1rem;
+    }
+    
+    .email-primary-btn {
+        min-width: 250px;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+    
+    .email-cta-icon {
+        display: none;
+    }
+    
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-item.enhanced {
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .contact-icon {
+        align-self: center;
+    }
+    
+    .partnership-benefits {
+        padding: 2rem;
+    }
+    
+    .partnership-benefits h3 {
+        font-size: 1.6rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .email-cta-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .email-cta-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .email-primary-btn {
+        min-width: 220px;
+        font-size: 1rem;
+        padding: 0.9rem 1.5rem;
+    }
+    
+    .email-actions {
+        gap: 0.8rem;
+    }
+    
+    .contact-item.enhanced {
+        padding: 1.5rem;
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .partnership-benefits {
+        padding: 1.5rem;
+    }
 }
 
 .form-group {
@@ -566,4 +854,692 @@ footer {
 .footer-content p {
     margin-bottom: 0.5rem;
     opacity: 0.9;
+}
+
+/* ===========================================
+   PDF VIEWER MODAL - ADD TO sections.css
+   =========================================== */
+
+/* PDF Modal Overlay */
+.pdf-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: none;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.pdf-modal.open {
+    display: flex;
+    opacity: 1;
+}
+
+/* PDF Container */
+.pdf-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 90%;
+    margin: auto;
+    background: white;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* PDF Header */
+.pdf-header {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pdf-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.pdf-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition-fast);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* PDF Controls */
+.pdf-controls {
+    padding: 1rem 2rem;
+    background: var(--background-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.pdf-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pdf-nav-btn {
+    padding: 0.5rem 1rem;
+    background: var(--primary-purple);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition-fast);
+    min-width: 80px;
+}
+
+.pdf-nav-btn:hover {
+    background: var(--secondary-purple);
+}
+
+.pdf-nav-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pdf-page-info {
+    color: var(--text-medium);
+    font-weight: 500;
+    min-width: 120px;
+    text-align: center;
+}
+
+.pdf-download-btn {
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pdf-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+}
+
+/* PDF Viewer */
+.pdf-viewer {
+    flex: 1;
+    overflow: auto;
+    background: #525659;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+}
+
+.pdf-canvas-container {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+#pdf-canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Loading Spinner */
+.pdf-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.pdf-loading.show {
+    display: block;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .pdf-container {
+        width: 95%;
+        height: 95%;
+    }
+    
+    .pdf-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .pdf-title {
+        font-size: 1.2rem;
+    }
+    
+    .pdf-controls {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .pdf-navigation {
+        order: 1;
+    }
+    
+    .pdf-download-btn {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .pdf-nav-btn {
+        min-width: 70px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .pdf-viewer {
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-container {
+        width: 98%;
+        height: 98%;
+    }
+    
+    .pdf-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .pdf-title {
+        font-size: 1rem;
+    }
+    
+    .pdf-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.5rem;
+    }
+    
+    .pdf-controls {
+        padding: 0.5rem;
+    }
+    
+    .pdf-navigation {
+        gap: 0.5rem;
+    }
+    
+    .pdf-nav-btn {
+        min-width: 60px;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .pdf-page-info {
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+    
+    .pdf-download-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===========================================
+   PDF ZOOM CONTROLS - ADD TO sections.css
+   =========================================== */
+
+/* Enhanced PDF Controls Layout */
+.pdf-controls {
+    padding: 1rem 2rem;
+    background: var(--background-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-top: 1px solid #e0e0e0;
+    gap: 1rem;
+}
+
+/* Zoom Controls Container */
+.pdf-zoom-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.25rem;
+    border-radius: var(--border-radius-small);
+    border: 1px solid #e0e0e0;
+}
+
+/* Zoom Buttons */
+.pdf-zoom-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--primary-purple);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-zoom-btn:hover {
+    background: var(--secondary-purple);
+    transform: translateY(-1px);
+}
+
+.pdf-fit-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-fit-btn:hover {
+    background: var(--secondary-blue);
+    transform: translateY(-1px);
+}
+
+/* Zoom Info Display */
+.zoom-info {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-medium);
+    min-width: 50px;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+/* Mobile Responsive for Enhanced Controls */
+@media (max-width: 768px) {
+    .pdf-controls {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .pdf-navigation {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .pdf-zoom-controls {
+        order: 2;
+        justify-content: center;
+    }
+    
+    .pdf-download-btn {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .pdf-nav-btn {
+        min-width: 80px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .pdf-zoom-btn,
+    .pdf-fit-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .zoom-info {
+        min-width: 60px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-controls {
+        padding: 0.5rem;
+        gap: 0.75rem;
+    }
+    
+    .pdf-navigation {
+        gap: 0.5rem;
+    }
+    
+    .pdf-nav-btn {
+        min-width: 70px;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .pdf-zoom-btn,
+    .pdf-fit-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .zoom-info {
+        min-width: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .pdf-download-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .pdf-page-info {
+        font-size: 0.8rem;
+        min-width: 90px;
+    }
+}
+/* ===========================================
+   SMOOTH ZOOM CONTROLS - REPLACE zoom controls CSS in sections.css
+   =========================================== */
+
+/* Enhanced PDF Controls Layout */
+.pdf-controls {
+    padding: 1rem 2rem;
+    background: var(--background-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-top: 1px solid #e0e0e0;
+    gap: 1rem;
+}
+
+/* Zoom Controls Container */
+.pdf-zoom-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-small);
+    border: 1px solid #e0e0e0;
+    min-width: 300px;
+}
+
+/* Zoom Slider Container */
+.zoom-slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+/* Zoom Slider Styling */
+.zoom-slider {
+    width: 120px;
+    height: 6px;
+    border-radius: 3px;
+    background: #e0e0e0;
+    outline: none;
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.zoom-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(160, 67, 140, 0.3);
+    transition: var(--transition-fast);
+}
+
+.zoom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(160, 67, 140, 0.4);
+}
+
+.zoom-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(160, 67, 140, 0.3);
+    transition: var(--transition-fast);
+}
+
+.zoom-slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(160, 67, 140, 0.4);
+}
+
+.zoom-slider::-webkit-slider-track {
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #e0e0e0 0%, var(--primary-purple) 50%, var(--primary-blue) 100%);
+}
+
+.zoom-slider::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #e0e0e0 0%, var(--primary-purple) 50%, var(--primary-blue) 100%);
+    border: none;
+}
+
+/* Zoom Buttons */
+.pdf-zoom-btn {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-purple);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pdf-zoom-btn:hover {
+    background: var(--secondary-purple);
+    transform: translateY(-1px);
+}
+
+.pdf-fit-btn {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pdf-fit-btn:hover {
+    background: var(--secondary-blue);
+    transform: translateY(-1px);
+}
+
+/* Zoom Info Display */
+.zoom-info {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-medium);
+    min-width: 45px;
+    text-align: center;
+    padding: 0.2rem 0;
+    background: var(--background-light);
+    border-radius: 4px;
+}
+
+/* Mobile Responsive for Enhanced Controls */
+@media (max-width: 768px) {
+    .pdf-controls {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .pdf-navigation {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .pdf-zoom-controls {
+        order: 2;
+        justify-content: center;
+        min-width: auto;
+        width: 100%;
+        max-width: 350px;
+        padding: 0.75rem;
+    }
+    
+    .zoom-slider {
+        width: 140px;
+    }
+    
+    .pdf-download-btn {
+        order: 3;
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .pdf-nav-btn {
+        min-width: 80px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .pdf-zoom-btn,
+    .pdf-fit-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .zoom-info {
+        min-width: 50px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-controls {
+        padding: 0.5rem;
+        gap: 0.75rem;
+    }
+    
+    .pdf-navigation {
+        gap: 0.5rem;
+    }
+    
+    .pdf-nav-btn {
+        min-width: 70px;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .pdf-zoom-controls {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .zoom-slider {
+        width: 100px;
+    }
+    
+    .pdf-zoom-btn,
+    .pdf-fit-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
+    .zoom-info {
+        min-width: 40px;
+        font-size: 0.8rem;
+    }
+    
+    .pdf-download-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .pdf-page-info {
+        font-size: 0.8rem;
+        min-width: 90px;
+    }
 }
