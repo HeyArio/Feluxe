@@ -12,10 +12,10 @@
 
 /* CSS Variables for Brand Colors */
 :root {
-    --primary-purple: #a0438c;
-    --secondary-purple: #8b3a7a;
-    --primary-blue: #1e3a5f;
-    --secondary-blue: #2c5282;
+    --primary-purple: #6A2CA0;
+    --secondary-purple: #54208A;
+    --primary-blue: #0FA4A7;
+    --secondary-blue: #0B7E82;
     
     --text-dark: #333;
     --text-medium: #555;
