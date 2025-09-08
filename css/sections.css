@@ -74,6 +74,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .feature-tag {
@@ -85,10 +86,25 @@
     font-weight: 500;
 }
 
+.packaging-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.packaging-info p {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
 /* About Section */
 .about {
     padding: 6rem 0;
     background: white;
+    position: relative;
 }
 
 .about-content {
@@ -106,17 +122,25 @@
     font-weight: 600;
 }
 
+.about-text h4 {
+    color: var(--primary-blue);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    font-weight: 600;
+}
+
 .about-text p {
     color: var(--text-medium);
     font-size: 1.1rem;
     line-height: 1.8;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .stat-item {
@@ -144,6 +168,280 @@
 .stat-label {
     color: var(--text-light);
     font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* ENHANCED ABOUT GALLERY */
+.about-gallery {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    perspective: 1000px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 15px 40px rgba(160, 67, 140, 0.15);
+    transition: all var(--transition-medium);
+    transform-style: preserve-3d;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 25px 60px rgba(160, 67, 140, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+    display: block;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(106, 44, 160, 0.9), rgba(15, 164, 167, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-label {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    transition: transform var(--transition-medium);
+}
+
+.gallery-item:hover .gallery-label {
+    transform: translateY(0);
+}
+
+/* First item - special styling */
+.gallery-item:first-child::after {
+    content: '✓ CERTIFIED';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* ===========================================
+   PRODUCTION PROCESS SECTION
+   =========================================== */
+
+.production-process {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--background-white) 0%, var(--background-light) 50%, var(--background-gray) 100%);
+    position: relative;
+}
+
+.process-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 4rem;
+}
+
+.process-intro {
+    margin-bottom: 3rem;
+}
+
+.process-intro h3 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.process-intro p {
+    color: var(--text-medium);
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 10px 30px rgba(160, 67, 140, 0.1);
+    transition: var(--transition-medium);
+    border-left: 5px solid transparent;
+}
+
+.process-step:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 40px rgba(160, 67, 140, 0.2);
+    border-left-color: var(--primary-purple);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(160, 67, 140, 0.3);
+}
+
+.step-content h4 {
+    color: var(--secondary-purple);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.step-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.process-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.process-diagram {
+    position: relative;
+    background: white;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(160, 67, 140, 0.15);
+    transition: var(--transition-medium);
+}
+
+.process-diagram:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(160, 67, 140, 0.25);
+}
+
+.process-diagram img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.diagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(106, 44, 160, 0.9), rgba(15, 164, 167, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.process-diagram:hover .diagram-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.overlay-content i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.overlay-content p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.process-highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.highlight-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-medium);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 8px 25px rgba(160, 67, 140, 0.1);
+    transition: var(--transition-fast);
+    border: 1px solid rgba(160, 67, 140, 0.1);
+}
+
+.highlight-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(160, 67, 140, 0.2);
+    border-color: var(--primary-purple);
+}
+
+.highlight-item i {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.highlight-item span {
+    font-weight: 600;
+    color: var(--text-dark);
     font-size: 0.95rem;
 }
 
@@ -216,20 +514,14 @@
     background: linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 50%, var(--background-gray) 100%);
 }
 
-.catalog-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 5rem;
-    align-items: center;
-    margin-top: 3rem;
-}
-
 .catalog-info {
     background: white;
     padding: 3.5rem;
     border-radius: var(--border-radius-xl);
     box-shadow: 0 20px 60px var(--shadow-light);
     transition: var(--transition-medium);
+    max-width: 800px;
+    margin: 3rem auto 0;
 }
 
 .catalog-info:hover {
@@ -326,123 +618,8 @@
     box-shadow: 0 12px 30px var(--shadow-heavy);
 }
 
-.catalog-preview {
-    background: white;
-    border-radius: var(--border-radius-xl);
-    padding: 2.5rem;
-    box-shadow: 0 20px 60px var(--shadow-light);
-    transition: var(--transition-medium);
-}
-
-.catalog-preview:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 80px var(--shadow-medium);
-}
-
-.preview-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid #f0f0f0;
-}
-
-.preview-title {
-    color: var(--primary-blue);
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.preview-badge {
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.catalog-thumbnail {
-    width: 100%;
-    height: 450px;
-    background: linear-gradient(135deg, var(--background-light), #f0f0f0);
-    border-radius: var(--border-radius-large);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: var(--text-light);
-    border: 3px dashed rgba(160, 67, 140, 0.4);
-    transition: var(--transition-medium);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.catalog-thumbnail:hover {
-    border-color: var(--primary-purple);
-    background: linear-gradient(135deg, #faf6ff, #f5f5f5);
-    transform: scale(1.02);
-}
-
-.catalog-thumbnail i {
-    font-size: 5rem;
-    color: var(--primary-purple);
-    margin-bottom: 1.5rem;
-}
-
-.catalog-thumbnail h4 {
-    font-size: 1.6rem;
-    color: var(--primary-blue);
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.catalog-thumbnail p {
-    color: var(--text-light);
-    text-align: center;
-    max-width: 280px;
-    line-height: 1.6;
-}
-
-.catalog-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(160, 67, 140, 0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition-medium);
-}
-
-.catalog-thumbnail:hover .catalog-overlay {
-    opacity: 1;
-}
-
-.overlay-content {
-    text-align: center;
-    color: white;
-}
-
-.overlay-content i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.overlay-content p {
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
 /* ===========================================
-   ENHANCED CONTACT SECTION - REPLACE contact CSS in sections.css
+   ENHANCED CONTACT SECTION
    =========================================== */
 
 .contact {
@@ -556,6 +733,41 @@
     transform: translateY(-2px);
 }
 
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-method h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.phone-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.phone-numbers a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.3rem 0.5rem;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.phone-numbers a:hover {
+    background: #3498db;
+    color: white;
+}
+
 .response-time {
     display: flex;
     align-items: center;
@@ -624,31 +836,22 @@
     font-weight: 600;
 }
 
-.contact-email-link {
-    color: var(--primary-purple);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 700;
-    display: block;
+.contact-details p {
+    color: var(--text-light);
+    line-height: 1.6;
     margin-bottom: 0.5rem;
-    transition: var(--transition-fast);
 }
 
-.contact-email-link:hover {
-    color: var(--secondary-purple);
-    text-decoration: underline;
+.address {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
 }
 
 .highlight-text {
     color: var(--primary-purple);
     font-weight: 700;
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.contact-details p {
-    color: var(--text-light);
-    line-height: 1.6;
     margin-bottom: 0.5rem;
 }
 
@@ -705,144 +908,6 @@
     line-height: 1.4;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .email-cta-card {
-        flex-direction: column;
-        padding: 2.5rem 2rem;
-        text-align: center;
-    }
-    
-    .email-cta-content h3 {
-        font-size: 1.8rem;
-    }
-    
-    .email-cta-content p {
-        font-size: 1.1rem;
-    }
-    
-    .email-primary-btn {
-        min-width: 250px;
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
-    }
-    
-    .email-cta-icon {
-        display: none;
-    }
-    
-    .contact-info-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .contact-item.enhanced {
-        padding: 2rem;
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .contact-icon {
-        align-self: center;
-    }
-    
-    .partnership-benefits {
-        padding: 2rem;
-    }
-    
-    .partnership-benefits h3 {
-        font-size: 1.6rem;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .email-cta-card {
-        padding: 2rem 1.5rem;
-    }
-    
-    .email-cta-content h3 {
-        font-size: 1.6rem;
-    }
-    
-    .email-primary-btn {
-        min-width: 220px;
-        font-size: 1rem;
-        padding: 0.9rem 1.5rem;
-    }
-    
-    .email-actions {
-        gap: 0.8rem;
-    }
-    
-    .contact-item.enhanced {
-        padding: 1.5rem;
-    }
-    
-    .contact-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
-    
-    .partnership-benefits {
-        padding: 1.5rem;
-    }
-}
-
-.form-group {
-    margin-bottom: 2rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--secondary-purple);
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem 1.2rem;
-    border: 2px solid #e9ecef;
-    border-radius: var(--border-radius-small);
-    font-size: 1rem;
-    transition: var(--transition-fast);
-    font-family: 'Inter', sans-serif;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-purple);
-    box-shadow: 0 0 0 3px rgba(160, 67, 140, 0.1);
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 1.2rem;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    color: white;
-    border: none;
-    border-radius: var(--border-radius-small);
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    font-family: 'Inter', sans-serif;
-}
-
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px var(--shadow-heavy);
-}
-
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 50%, var(--primary-purple) 100%);
@@ -854,735 +919,4 @@ footer {
 .footer-content p {
     margin-bottom: 0.5rem;
     opacity: 0.9;
-}
-
-/* ===========================================
-   PDF VIEWER MODAL - ADD TO sections.css
-   =========================================== */
-
-/* PDF Modal Overlay */
-.pdf-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    display: none;
-    opacity: 0;
-    transition: opacity var(--transition-medium);
-}
-
-.pdf-modal.open {
-    display: flex;
-    opacity: 1;
-}
-
-/* PDF Container */
-.pdf-container {
-    width: 90%;
-    max-width: 1000px;
-    height: 90%;
-    margin: auto;
-    background: white;
-    border-radius: var(--border-radius-large);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
-}
-
-/* PDF Header */
-.pdf-header {
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.pdf-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.pdf-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: var(--transition-fast);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pdf-close:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* PDF Controls */
-.pdf-controls {
-    padding: 1rem 2rem;
-    background: var(--background-gray);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-    border-top: 1px solid #e0e0e0;
-}
-
-.pdf-navigation {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.pdf-nav-btn {
-    padding: 0.5rem 1rem;
-    background: var(--primary-purple);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius-small);
-    cursor: pointer;
-    font-weight: 500;
-    transition: var(--transition-fast);
-    min-width: 80px;
-}
-
-.pdf-nav-btn:hover {
-    background: var(--secondary-purple);
-}
-
-.pdf-nav-btn:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-}
-
-.pdf-page-info {
-    color: var(--text-medium);
-    font-weight: 500;
-    min-width: 120px;
-    text-align: center;
-}
-
-.pdf-download-btn {
-    padding: 0.5rem 1.5rem;
-    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-    color: white;
-    border: none;
-    border-radius: var(--border-radius-small);
-    cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition-fast);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.pdf-download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
-}
-
-/* PDF Viewer */
-.pdf-viewer {
-    flex: 1;
-    overflow: auto;
-    background: #525659;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 2rem 1rem;
-}
-
-.pdf-canvas-container {
-    background: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    margin: 0 auto;
-}
-
-#pdf-canvas {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Loading Spinner */
-.pdf-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 1.2rem;
-    display: none;
-}
-
-.pdf-loading.show {
-    display: block;
-}
-
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: spin 1s ease-in-out infinite;
-    margin: 0 auto 1rem;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .pdf-container {
-        width: 95%;
-        height: 95%;
-    }
-    
-    .pdf-header {
-        padding: 1rem 1.5rem;
-    }
-    
-    .pdf-title {
-        font-size: 1.2rem;
-    }
-    
-    .pdf-controls {
-        padding: 0.75rem 1rem;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .pdf-navigation {
-        order: 1;
-    }
-    
-    .pdf-download-btn {
-        order: 2;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .pdf-nav-btn {
-        min-width: 70px;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .pdf-viewer {
-        padding: 1rem 0.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .pdf-container {
-        width: 98%;
-        height: 98%;
-    }
-    
-    .pdf-header {
-        padding: 0.75rem 1rem;
-    }
-    
-    .pdf-title {
-        font-size: 1rem;
-    }
-    
-    .pdf-close {
-        width: 35px;
-        height: 35px;
-        font-size: 1.5rem;
-    }
-    
-    .pdf-controls {
-        padding: 0.5rem;
-    }
-    
-    .pdf-navigation {
-        gap: 0.5rem;
-    }
-    
-    .pdf-nav-btn {
-        min-width: 60px;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-    }
-    
-    .pdf-page-info {
-        font-size: 0.9rem;
-        min-width: 100px;
-    }
-    
-    .pdf-download-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* ===========================================
-   PDF ZOOM CONTROLS - ADD TO sections.css
-   =========================================== */
-
-/* Enhanced PDF Controls Layout */
-.pdf-controls {
-    padding: 1rem 2rem;
-    background: var(--background-gray);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-    border-top: 1px solid #e0e0e0;
-    gap: 1rem;
-}
-
-/* Zoom Controls Container */
-.pdf-zoom-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: white;
-    padding: 0.25rem;
-    border-radius: var(--border-radius-small);
-    border: 1px solid #e0e0e0;
-}
-
-/* Zoom Buttons */
-.pdf-zoom-btn {
-    width: 36px;
-    height: 36px;
-    background: var(--primary-purple);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pdf-zoom-btn:hover {
-    background: var(--secondary-purple);
-    transform: translateY(-1px);
-}
-
-.pdf-fit-btn {
-    width: 36px;
-    height: 36px;
-    background: var(--primary-blue);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pdf-fit-btn:hover {
-    background: var(--secondary-blue);
-    transform: translateY(-1px);
-}
-
-/* Zoom Info Display */
-.zoom-info {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-medium);
-    min-width: 50px;
-    text-align: center;
-    padding: 0 0.5rem;
-}
-
-/* Mobile Responsive for Enhanced Controls */
-@media (max-width: 768px) {
-    .pdf-controls {
-        padding: 0.75rem 1rem;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .pdf-navigation {
-        order: 1;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .pdf-zoom-controls {
-        order: 2;
-        justify-content: center;
-    }
-    
-    .pdf-download-btn {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .pdf-nav-btn {
-        min-width: 80px;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .pdf-zoom-btn,
-    .pdf-fit-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    
-    .zoom-info {
-        min-width: 60px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .pdf-controls {
-        padding: 0.5rem;
-        gap: 0.75rem;
-    }
-    
-    .pdf-navigation {
-        gap: 0.5rem;
-    }
-    
-    .pdf-nav-btn {
-        min-width: 70px;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-    }
-    
-    .pdf-zoom-btn,
-    .pdf-fit-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
-    }
-    
-    .zoom-info {
-        min-width: 50px;
-        font-size: 0.9rem;
-    }
-    
-    .pdf-download-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-    }
-    
-    .pdf-page-info {
-        font-size: 0.8rem;
-        min-width: 90px;
-    }
-}
-/* ===========================================
-   SMOOTH ZOOM CONTROLS - REPLACE zoom controls CSS in sections.css
-   =========================================== */
-
-/* Enhanced PDF Controls Layout */
-.pdf-controls {
-    padding: 1rem 2rem;
-    background: var(--background-gray);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-    border-top: 1px solid #e0e0e0;
-    gap: 1rem;
-}
-
-/* Zoom Controls Container */
-.pdf-zoom-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: white;
-    padding: 0.5rem;
-    border-radius: var(--border-radius-small);
-    border: 1px solid #e0e0e0;
-    min-width: 300px;
-}
-
-/* Zoom Slider Container */
-.zoom-slider-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    flex: 1;
-}
-
-/* Zoom Slider Styling */
-.zoom-slider {
-    width: 120px;
-    height: 6px;
-    border-radius: 3px;
-    background: #e0e0e0;
-    outline: none;
-    transition: var(--transition-fast);
-    cursor: pointer;
-}
-
-.zoom-slider::-webkit-slider-thumb {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(160, 67, 140, 0.3);
-    transition: var(--transition-fast);
-}
-
-.zoom-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 3px 8px rgba(160, 67, 140, 0.4);
-}
-
-.zoom-slider::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 2px 6px rgba(160, 67, 140, 0.3);
-    transition: var(--transition-fast);
-}
-
-.zoom-slider::-moz-range-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 3px 8px rgba(160, 67, 140, 0.4);
-}
-
-.zoom-slider::-webkit-slider-track {
-    height: 6px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #e0e0e0 0%, var(--primary-purple) 50%, var(--primary-blue) 100%);
-}
-
-.zoom-slider::-moz-range-track {
-    height: 6px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #e0e0e0 0%, var(--primary-purple) 50%, var(--primary-blue) 100%);
-    border: none;
-}
-
-/* Zoom Buttons */
-.pdf-zoom-btn {
-    width: 32px;
-    height: 32px;
-    background: var(--primary-purple);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.pdf-zoom-btn:hover {
-    background: var(--secondary-purple);
-    transform: translateY(-1px);
-}
-
-.pdf-fit-btn {
-    width: 32px;
-    height: 32px;
-    background: var(--primary-blue);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.pdf-fit-btn:hover {
-    background: var(--secondary-blue);
-    transform: translateY(-1px);
-}
-
-/* Zoom Info Display */
-.zoom-info {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-medium);
-    min-width: 45px;
-    text-align: center;
-    padding: 0.2rem 0;
-    background: var(--background-light);
-    border-radius: 4px;
-}
-
-/* Mobile Responsive for Enhanced Controls */
-@media (max-width: 768px) {
-    .pdf-controls {
-        padding: 0.75rem 1rem;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .pdf-navigation {
-        order: 1;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .pdf-zoom-controls {
-        order: 2;
-        justify-content: center;
-        min-width: auto;
-        width: 100%;
-        max-width: 350px;
-        padding: 0.75rem;
-    }
-    
-    .zoom-slider {
-        width: 140px;
-    }
-    
-    .pdf-download-btn {
-        order: 3;
-        width: 100%;
-        max-width: 250px;
-        justify-content: center;
-    }
-    
-    .pdf-nav-btn {
-        min-width: 80px;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .pdf-zoom-btn,
-    .pdf-fit-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
-    }
-    
-    .zoom-info {
-        min-width: 50px;
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .pdf-controls {
-        padding: 0.5rem;
-        gap: 0.75rem;
-    }
-    
-    .pdf-navigation {
-        gap: 0.5rem;
-    }
-    
-    .pdf-nav-btn {
-        min-width: 70px;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-    }
-    
-    .pdf-zoom-controls {
-        gap: 0.5rem;
-        padding: 0.5rem;
-    }
-    
-    .zoom-slider {
-        width: 100px;
-    }
-    
-    .pdf-zoom-btn,
-    .pdf-fit-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 0.8rem;
-    }
-    
-    .zoom-info {
-        min-width: 40px;
-        font-size: 0.8rem;
-    }
-    
-    .pdf-download-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-    }
-    
-    .pdf-page-info {
-        font-size: 0.8rem;
-        min-width: 90px;
-    }
-}
-
-/* === About Gallery & Mascot (added) === */
-.about-gallery {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-.about-gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 10px 30px var(--shadow-light);
-}
-.mascot-cat {
-    position: absolute;
-    right: 2%;
-    bottom: -30px;
-    width: clamp(120px, 18vw, 240px);
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
-    pointer-events: none;
-    transform: rotate(-2deg);
-}
-/* ensure About section is positioning context */
-.about { position: relative; overflow: hidden; }
-
-@media (max-width: 768px) {
-    .about-gallery {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-    .about-gallery img {
-        height: 200px;
-    }
-    .mascot-cat {
-        right: -10px;
-        bottom: -10px;
-        width: clamp(100px, 28vw, 180px);
-        transform: rotate(0deg);
-        opacity: 0.9;
-    }
 }
