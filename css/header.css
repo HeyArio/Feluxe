@@ -197,10 +197,12 @@ header.scrolled {
 
 /* ---------- Breakpoints (mobile-first) ---------- */
 /* ≥768px: show desktop links, hide hamburger */
-@media (min-width: 768px) {
+/* ≥1200px: show desktop links, hide hamburger */
+@media (min-width: 1200px) {
   .nav-links { display: inline-flex; }
   .mobile-menu-toggle { display: none; }
 }
+
 
 /* ≥1024px: comfy gaps/sizes */
 @media (min-width: 1024px) {

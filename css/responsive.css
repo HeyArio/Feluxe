@@ -998,3 +998,33 @@
         animation: none;
     }
 }
+
+@media (max-width: 1023px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+
+/* --- Hard hide desktop nav on phones & tablets --- */
+@media (max-width: 1199px) {
+  .nav-links { display: none !important; }
+  .mobile-menu-toggle { display: flex !important; }
+}
+
+/* --- KILL SWITCH: never show desktop nav under 1200px & prevent side scroll --- */
+@media (max-width: 1199px) {
+  header nav .nav-links {
+    display: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+  }
+
+  /* Belt & suspenders to stop any horizontal scroll */
+  html, body, header, nav {
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+}
