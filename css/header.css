@@ -57,6 +57,17 @@ nav {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+logo h1:hover {
+  background: linear-gradient(135deg, var(--secondary-purple), var(--secondary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Cat animation (center) */
