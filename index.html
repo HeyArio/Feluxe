@@ -1,531 +1,685 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feluxe Cat Litter - Premium Export Solutions</title>
-    
+
     <!-- External Dependencies -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Lottie Animation Library -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    
+
     <!-- Local CSS Files -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+      <ul class="mobile-menu-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#production">Production</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#catalog">Catalog</a></li>
+      </ul>
+    </div>
     <!-- Header -->
     <header>
-        <nav>
-            <!-- Left: Logo -->
-            <div class="logo">
-                <img src="assets/images/3fb339ba-df08-4a3f-9acb-70be938d3b71.png" alt="Feluxe Logo">
-                <h1>FELUXE</h1>
-            </div>
-
-            <!-- Center: Cat Animation with Audio -->
-            <div id="catWrapper" class="cat-center">
-                <lottie-player 
-                    id="catAnimation"
-                    src="cat-animation.json"
-                    background="transparent"
-                    speed="1"
-                    style="width: 80px; height: 80px;"
-                    loop
-                    autoplay>
-                </lottie-player>
-                <audio id="catMeow" src="cat-meow-8-fx-306184.mp3"></audio>
-            </div>
-
-            <!-- Right: Desktop Navigation -->
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#production">Production</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#catalog">Catalog</a></li>
-            </ul>
-
-            <!-- Mobile Menu Toggle -->
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu">
-            <ul class="mobile-menu-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#production">Production</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#catalog">Catalog</a></li>
-            </ul>
+      <nav>
+        <!-- Left: Logo -->
+        <div class="logo">
+          <img
+            src="assets/images/3fb339ba-df08-4a3f-9acb-70be938d3b71.png"
+            alt="Feluxe Logo"
+          />
+          <h1>FELUXE</h1>
         </div>
+
+        <!-- Center: Cat Animation with Audio -->
+        <div id="catWrapper" class="cat-center">
+          <lottie-player
+            id="catAnimation"
+            src="cat-animation.json"
+            background="transparent"
+            speed="1"
+            style="width: 80px; height: 80px"
+            loop
+            autoplay
+          >
+          </lottie-player>
+          <audio id="catMeow" src="cat-meow-8-fx-306184.mp3"></audio>
+        </div>
+
+        <!-- Right: Desktop Navigation -->
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#production">Production</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#catalog">Catalog</a></li>
+        </ul>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Premium Cat Litter from the Heart of Iran</h1>
-            <p class="subtitle">High Absorption | Dust-Free | Veterinary Certified<br>Sophisticated export services for discerning international markets. Quality, reliability, and excellence in every grain.</p>
-            <a href="#catalog" class="cta-button">View Our Catalog</a>
-        </div>
+      <div class="hero-content">
+        <h1>Premium Cat Litter from the Heart of Iran</h1>
+        <p class="subtitle">
+          High Absorption | Dust-Free | Veterinary Certified<br />Sophisticated
+          export services for discerning international markets. Quality,
+          reliability, and excellence in every grain.
+        </p>
+        <a href="#catalog" class="cta-button">View Our Catalog</a>
+      </div>
     </section>
 
     <!-- Products Section -->
     <section id="products" class="products-showcase fade-in">
-        <div class="container">
-            <h2 class="section-title">Our Premium FELUXE Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/images/1.jpg" alt="FELUXE Standard Granulated">
-                    </div>
-                    <div class="product-content">
-                        <h3>FELUXE Standard Granulated</h3>
-                        <p>Premium bentonite clay cat litter with superior clumping formula and exceptional absorption capabilities. Made from the finest Iranian bentonite for maximum odor control and easy cleanup.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">800% Absorption</span>
-                            <span class="feature-tag">Fast Clumping</span>
-                            <span class="feature-tag">Ultra Dust-Free</span>
-                            <span class="feature-tag">Veterinary Certified</span>
-                        </div>
-                        <div class="packaging-info">
-                            <p><strong>Available in:</strong> 5kg, 10kg packages & 1-ton bulk bags</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/images/2.jpg" alt="FELUXE Activated Charcoal">
-                    </div>
-                    <div class="product-content">
-                        <h3>FELUXE Activated Charcoal</h3>
-                        <p>Advanced formula enhanced with activated charcoal for superior odor elimination and long-lasting freshness. Perfect for multi-cat households and commercial use.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Enhanced Odor Control</span>
-                            <span class="feature-tag">Activated Charcoal</span>
-                            <span class="feature-tag">Long Lasting</span>
-                            <span class="feature-tag">Multi-Cat Formula</span>
-                        </div>
-                        <div class="packaging-info">
-                            <p><strong>Available in:</strong> 5kg, 10kg packages & 1-ton bulk bags</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/images/3.jpg" alt="FELUXE Scented Varieties">
-                    </div>
-                    <div class="product-content">
-                        <h3>FELUXE Scented Varieties</h3>
-                        <p>Delightfully scented formulas available in Lavender and Baby Powder fragrances. Premium bentonite performance with a pleasant, lasting scent experience.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Lavender Scent</span>
-                            <span class="feature-tag">Baby Powder</span>
-                            <span class="feature-tag">Natural Fragrance</span>
-                            <span class="feature-tag">Long-Lasting</span>
-                        </div>
-                        <div class="packaging-info">
-                            <p><strong>Available in:</strong> 5kg, 10kg packages & 1-ton bulk bags</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Our Premium FELUXE Products</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/1.jpg" alt="FELUXE Standard Granulated" />
             </div>
+            <div class="product-content">
+              <h3>FELUXE Standard Granulated</h3>
+              <p>
+                Premium bentonite clay cat litter with superior clumping formula
+                and exceptional absorption capabilities. Made from the finest
+                Iranian bentonite for maximum odor control and easy cleanup.
+              </p>
+              <div class="product-features">
+                <span class="feature-tag">800% Absorption</span>
+                <span class="feature-tag">Fast Clumping</span>
+                <span class="feature-tag">Ultra Dust-Free</span>
+                <span class="feature-tag">Veterinary Certified</span>
+              </div>
+              <div class="packaging-info">
+                <p>
+                  <strong>Available in:</strong> 5kg, 10kg packages & 1-ton bulk
+                  bags
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/2.jpg" alt="FELUXE Activated Charcoal" />
+            </div>
+            <div class="product-content">
+              <h3>FELUXE Activated Charcoal</h3>
+              <p>
+                Advanced formula enhanced with activated charcoal for superior
+                odor elimination and long-lasting freshness. Perfect for
+                multi-cat households and commercial use.
+              </p>
+              <div class="product-features">
+                <span class="feature-tag">Enhanced Odor Control</span>
+                <span class="feature-tag">Activated Charcoal</span>
+                <span class="feature-tag">Long Lasting</span>
+                <span class="feature-tag">Multi-Cat Formula</span>
+              </div>
+              <div class="packaging-info">
+                <p>
+                  <strong>Available in:</strong> 5kg, 10kg packages & 1-ton bulk
+                  bags
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/3.jpg" alt="FELUXE Scented Varieties" />
+            </div>
+            <div class="product-content">
+              <h3>FELUXE Scented Varieties</h3>
+              <p>
+                Delightfully scented formulas available in Lavender and Baby
+                Powder fragrances. Premium bentonite performance with a
+                pleasant, lasting scent experience.
+              </p>
+              <div class="product-features">
+                <span class="feature-tag">Lavender Scent</span>
+                <span class="feature-tag">Baby Powder</span>
+                <span class="feature-tag">Natural Fragrance</span>
+                <span class="feature-tag">Long-Lasting</span>
+              </div>
+              <div class="packaging-info">
+                <p>
+                  <strong>Available in:</strong> 5kg, 10kg packages & 1-ton bulk
+                  bags
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about fade-in">
-        <div class="container">
-            <h2 class="section-title">About Feluxe Cat Litter</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Excellence in Vertical Integration</h3>
-                    <p>Feluxe Cat Litter is a leading manufacturer of premium clumping cat litter in Iran, proudly offering <strong>PETOPIA</strong> for the domestic market and <strong>FELUXE</strong> for international markets. As part of a specialized industrial group, we manage the entire value chain through our own subsidiary company.</p>
-                    
-                    <p>From locating and extracting the finest bentonite mines in Iran, to micronizing and manufacturing - this vertical integration ensures consistent and reliable quality with competitive pricing through cost-efficient production. Every step from mining to packaging is carried out entirely within our factory, with no outsourcing.</p>
-                    
-                    <h4>Our Unique Advantage</h4>
-                    <p><strong>SPS is the ONLY cat litter factory in Iran with Iran Veterinary Organization License.</strong> This exclusive certification, maintained through regular inspections, ensures compliance and safety that no other Iranian manufacturer can match.</p>
-                    
-                    <p>In addition to our veterinary certification, we maintain <strong>ISO 9001 Certification</strong> and adherence to international standards, ensuring our products meet global quality requirements for export markets worldwide.</p>
-                    
-                    <p>Our domestic brand PETOPIA is the best-selling cat litter brand in Iran, distributed nationwide across all provinces and trusted by veterinarians, pet shops, and cat owners for unmatched quality.</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">800%</div>
-                        <div class="stat-label">Absorption Capacity</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">#1</div>
-                        <div class="stat-label">Brand in Iran</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Vertical Integration</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">ONLY</div>
-                        <div class="stat-label">Veterinary Certified</div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">About Feluxe Cat Litter</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Excellence in Vertical Integration</h3>
+            <p>
+              Feluxe Cat Litter is a leading manufacturer of premium clumping
+              cat litter in Iran, proudly offering <strong>PETOPIA</strong> for
+              the domestic market and <strong>FELUXE</strong> for international
+              markets. As part of a specialized industrial group, we manage the
+              entire value chain through our own subsidiary company.
+            </p>
+
+            <p>
+              From locating and extracting the finest bentonite mines in Iran,
+              to micronizing and manufacturing - this vertical integration
+              ensures consistent and reliable quality with competitive pricing
+              through cost-efficient production. Every step from mining to
+              packaging is carried out entirely within our factory, with no
+              outsourcing.
+            </p>
+
+            <h4>Our Unique Advantage</h4>
+            <p>
+              <strong
+                >SPS is the ONLY cat litter factory in Iran with Iran Veterinary
+                Organization License.</strong
+              >
+              This exclusive certification, maintained through regular
+              inspections, ensures compliance and safety that no other Iranian
+              manufacturer can match.
+            </p>
+
+            <p>
+              In addition to our veterinary certification, we maintain
+              <strong>ISO 9001 Certification</strong> and adherence to
+              international standards, ensuring our products meet global quality
+              requirements for export markets worldwide.
+            </p>
+
+            <p>
+              Our domestic brand PETOPIA is the best-selling cat litter brand in
+              Iran, distributed nationwide across all provinces and trusted by
+              veterinarians, pet shops, and cat owners for unmatched quality.
+            </p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">800%</div>
+              <div class="stat-label">Absorption Capacity</div>
             </div>
-            
-            <!-- Enhanced About Gallery -->
-            <div class="about-gallery">
-                <div class="gallery-item">
-                    <img src="assets/images/cert.jpg" alt="Veterinary Certification" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Veterinary Certification</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/IMG_6247.JPG" alt="Factory Production" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Factory & Production</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets\images\sang.jpg" alt="Packaging Logistics" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Product Preview</div>
-                    </div>
-                </div>
+            <div class="stat-item">
+              <div class="stat-number">#1</div>
+              <div class="stat-label">Brand in Iran</div>
             </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Vertical Integration</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">ONLY</div>
+              <div class="stat-label">Veterinary Certified</div>
+            </div>
+          </div>
         </div>
+
+        <!-- Enhanced About Gallery -->
+        <div class="about-gallery">
+          <div class="gallery-item">
+            <img
+              src="assets/images/cert.jpg"
+              alt="Veterinary Certification"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-label">Veterinary Certification</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/IMG_6247.JPG"
+              alt="Factory Production"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-label">Factory & Production</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets\images\sang.jpg"
+              alt="Packaging Logistics"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-label">Product Preview</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Production Process Section -->
     <section id="production" class="production-process fade-in">
-        <div class="container">
-            <h2 class="section-title">Our Production Process</h2>
-            <div class="process-content">
-                <div class="process-text">
-                    <div class="process-intro">
-                        <h3>Fully Integrated Production Line</h3>
-                        <p>We proudly operate a fully integrated production line that guarantees full traceability and consistent quality in every bag.</p>
-                    </div>
-                    
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Mining</h4>
-                                <p>Extracting premium bentonite clay from our own Iranian mines</p>
-                            </div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Processing & Purification</h4>
-                                <p>Advanced purification techniques to ensure optimal quality</p>
-                            </div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Granulation</h4>
-                                <p>Precision granulation for perfect clumping characteristics</p>
-                            </div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Packaging</h4>
-                                <p>Professional packaging in various sizes for different markets</p>
-                            </div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <div class="step-content">
-                                <h4>Quality Control & Distribution</h4>
-                                <p>Rigorous testing and worldwide distribution network</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="process-visual">
-                    <div class="process-diagram">
-                        <img src="assets/images/IMG_20250908_130251_710.jpg" alt="FELUXE Production Process Diagram" loading="lazy">
-                        <div class="diagram-overlay">
-                            <div class="overlay-content">
-                                <i class="fas fa-industry"></i>
-                                <p>Complete Vertical Integration</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="process-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>100% Quality Control</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Full Traceability</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-award"></i>
-                            <span>Veterinary Certified</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Our Production Process</h2>
+        <div class="process-content">
+          <div class="process-text">
+            <div class="process-intro">
+              <h3>Fully Integrated Production Line</h3>
+              <p>
+                We proudly operate a fully integrated production line that
+                guarantees full traceability and consistent quality in every
+                bag.
+              </p>
             </div>
+
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Mining</h4>
+                  <p>
+                    Extracting premium bentonite clay from our own Iranian mines
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Processing & Purification</h4>
+                  <p>
+                    Advanced purification techniques to ensure optimal quality
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Granulation</h4>
+                  <p>
+                    Precision granulation for perfect clumping characteristics
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4>Packaging</h4>
+                  <p>
+                    Professional packaging in various sizes for different
+                    markets
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                  <h4>Quality Control & Distribution</h4>
+                  <p>Rigorous testing and worldwide distribution network</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-visual">
+            <div class="process-diagram">
+              <img
+                src="assets/images/IMG_20250908_130251_710.jpg"
+                alt="FELUXE Production Process Diagram"
+                loading="lazy"
+              />
+              <div class="diagram-overlay">
+                <div class="overlay-content">
+                  <i class="fas fa-industry"></i>
+                  <p>Complete Vertical Integration</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="process-highlights">
+              <div class="highlight-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>100% Quality Control</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Full Traceability</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-award"></i>
+                <span>Veterinary Certified</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services fade-in">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Veterinary Certification</h3>
-                    <p>Exclusive Iran Veterinary Organization License - the ONLY cat litter factory in Iran with this certification, ensuring safety and quality compliance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <h3>Vertical Integration</h3>
-                    <p>Complete control from mining our own bentonite deposits to final packaging, ensuring consistent quality and competitive pricing.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Global Export</h3>
-                    <p>Comprehensive international shipping solutions with established logistics partnerships ensuring reliable delivery worldwide.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <h3>Private Label Services</h3>
-                    <p>All FELUXE product types available for packaging under your own brand with custom specifications and designs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <h3>Bulk Supply Solutions</h3>
-                    <p>Large-scale production available in 1-ton jumbo bags, ensuring the lowest possible price for bulk buyers and manufacturers.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Exclusive Partnerships</h3>
-                    <p>Dedicated distributor agreements and business development support to help you succeed in your local market.</p>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-certificate"></i>
             </div>
+            <h3>Veterinary Certification</h3>
+            <p>
+              Exclusive Iran Veterinary Organization License - the ONLY cat
+              litter factory in Iran with this certification, ensuring safety
+              and quality compliance.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <h3>Vertical Integration</h3>
+            <p>
+              Complete control from mining our own bentonite deposits to final
+              packaging, ensuring consistent quality and competitive pricing.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Global Export</h3>
+            <p>
+              Comprehensive international shipping solutions with established
+              logistics partnerships ensuring reliable delivery worldwide.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-tags"></i>
+            </div>
+            <h3>Private Label Services</h3>
+            <p>
+              All FELUXE product types available for packaging under your own
+              brand with custom specifications and designs.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cubes"></i>
+            </div>
+            <h3>Bulk Supply Solutions</h3>
+            <p>
+              Large-scale production available in 1-ton jumbo bags, ensuring the
+              lowest possible price for bulk buyers and manufacturers.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Exclusive Partnerships</h3>
+            <p>
+              Dedicated distributor agreements and business development support
+              to help you succeed in your local market.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Catalog Section -->
     <section id="catalog" class="catalog fade-in">
-        <div class="container">
-            <h2 class="section-title">Our Catalog</h2>
-            <div class="catalog-info">
-                <div class="catalog-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h3>FELUXE Product Catalog</h3>
-                <p>Explore our comprehensive catalog featuring detailed product specifications, technical data sheets, pricing information, and packaging options for all our premium cat litter solutions.</p>
-                
-                <ul class="catalog-features">
-                    <li><i class="fas fa-check-circle"></i> Complete Product Specifications</li>
-                    <li><i class="fas fa-check-circle"></i> Veterinary Certification Details</li>
-                    <li><i class="fas fa-check-circle"></i> Packaging Options (5kg, 10kg, Bulk)</li>
-                    <li><i class="fas fa-check-circle"></i> Export Documentation</li>
-                    <li><i class="fas fa-check-circle"></i> Quality Certifications & Standards</li>
-                    <li><i class="fas fa-check-circle"></i> Private Label Solutions</li>
-                </ul>
+      <div class="container">
+        <h2 class="section-title">Our Catalog</h2>
+        <div class="catalog-info">
+          <div class="catalog-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>FELUXE Product Catalog</h3>
+          <p>
+            Explore our comprehensive catalog featuring detailed product
+            specifications, technical data sheets, pricing information, and
+            packaging options for all our premium cat litter solutions.
+          </p>
 
-                <div class="catalog-buttons">
-                    <a href="assets/pdfs/YASI CATALOUGE.pdf" class="catalog-btn" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> View Full Catalog
-                    </a>
-                    <a href="assets/pdfs/YASI CATALOUGE.pdf" class="catalog-btn secondary" download>
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
+          <ul class="catalog-features">
+            <li>
+              <i class="fas fa-check-circle"></i> Complete Product
+              Specifications
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Veterinary Certification
+              Details
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Packaging Options (5kg, 10kg,
+              Bulk)
+            </li>
+            <li><i class="fas fa-check-circle"></i> Export Documentation</li>
+            <li>
+              <i class="fas fa-check-circle"></i> Quality Certifications &
+              Standards
+            </li>
+            <li><i class="fas fa-check-circle"></i> Private Label Solutions</li>
+          </ul>
+
+          <div class="catalog-buttons">
+            <a
+              href="assets/pdfs/YASI CATALOUGE.pdf"
+              class="catalog-btn"
+              target="_blank"
+            >
+              <i class="fas fa-external-link-alt"></i> View Full Catalog
+            </a>
+            <a
+              href="assets/pdfs/YASI CATALOUGE.pdf"
+              class="catalog-btn secondary"
+              download
+            >
+              <i class="fas fa-download"></i> Download PDF
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Enhanced Contact Section -->
     <section id="contact" class="contact fade-in">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            
-            <!-- Main Contact CTA -->
-            <div class="email-cta-section">
-                <div class="email-cta-card">
-                    <div class="email-cta-content">
-                        <h3>Ready to Partner with FELUXE?</h3>
-                        <p>Get in touch for wholesale pricing, distribution opportunities, and custom solutions.</p>
-                        <div class="email-actions">
-                            <a href="mailto:info@feluxe.com?subject=Partnership Inquiry - FELUXE Cat Litter&body=Hello FELUXE Team,%0D%0A%0D%0AI am interested in learning more about partnership opportunities with FELUXE Cat Litter.%0D%0A%0D%0ACompany:%0D%0ACountry:%0D%0AType of inquiry:%0D%0A%0D%0APlease provide more information about your products and partnership terms.%0D%0A%0D%0AThank you," 
-                               class="email-primary-btn">
-                                <i class="fas fa-envelope"></i>
-                                Email Us: info@feluxe.com
-                            </a>
-                            <button class="email-copy-btn" onclick="copyEmail()">
-                                <i class="fas fa-copy"></i>
-                                Copy Email
-                            </button>
-                        </div>
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <h4>Sales Manager</h4>
-                                <p>For orders & sales inquiries:</p>
-                                <div class="phone-numbers">
-                                    <a href="tel:+989909414596">+98 990 941 4596</a>
-                                    <a href="tel:+989128338734">+98 912 833 8734</a>
-                                </div>
-                            </div>
-                            <div class="contact-method">
-                                <h4>Technical Office</h4>
-                                <p>For technical inquiries:</p>
-                                <div class="phone-numbers">
-                                    <a href="tel:+982188797832">+98 21 88797832-3</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="response-time">
-                            <i class="fas fa-clock"></i>
-                            <span>We respond within 24 hours</span>
-                        </div>
-                    </div>
-                    <div class="email-cta-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
 
-            <!-- Contact Info Grid -->
-            <div class="contact-info-grid">
-                <div class="contact-item enhanced">
-                    <div class="contact-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Tehran Branch Office</h3>
-                        <p class="address">Iran, Tehran, Nelson Mandela Blvd<br>
-                        Dastgerdi Street, PAM Tower, 7th Floor<br>
-                        Sanayeh Poodr Sangsar (SPS)</p>
-                        <p><strong>Phone:</strong> +98 21 88797832-3</p>
-                    </div>
+        <!-- Main Contact CTA -->
+        <div class="email-cta-section">
+          <div class="email-cta-card">
+            <div class="email-cta-content">
+              <h3>Ready to Partner with FELUXE?</h3>
+              <p>
+                Get in touch for wholesale pricing, distribution opportunities,
+                and custom solutions.
+              </p>
+              <div class="email-actions">
+                <a
+                  href="mailto:info@feluxe.com?subject=Partnership Inquiry - FELUXE Cat Litter&body=Hello FELUXE Team,%0D%0A%0D%0AI am interested in learning more about partnership opportunities with FELUXE Cat Litter.%0D%0A%0D%0ACompany:%0D%0ACountry:%0D%0AType of inquiry:%0D%0A%0D%0APlease provide more information about your products and partnership terms.%0D%0A%0D%0AThank you,"
+                  class="email-primary-btn"
+                >
+                  <i class="fas fa-envelope"></i>
+                  Email Us: info@feluxe.com
+                </a>
+                <button class="email-copy-btn" onclick="copyEmail()">
+                  <i class="fas fa-copy"></i>
+                  Copy Email
+                </button>
+              </div>
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <h4>Sales Manager</h4>
+                  <p>For orders & sales inquiries:</p>
+                  <div class="phone-numbers">
+                    <a href="tel:+989909414596">+98 990 941 4596</a>
+                    <a href="tel:+989128338734">+98 912 833 8734</a>
+                  </div>
                 </div>
-                
-                <div class="contact-item enhanced">
-                    <div class="contact-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Factory Location</h3>
-                        <p class="address">Iran, Sorkheh to Semnan Road<br>
-                        Sanayeh Poodr Sangsar Factory</p>
-                        <p class="highlight-text">Fully Integrated Production Facility</p>
-                    </div>
+                <div class="contact-method">
+                  <h4>Technical Office</h4>
+                  <p>For technical inquiries:</p>
+                  <div class="phone-numbers">
+                    <a href="tel:+982188797832">+98 21 88797832-3</a>
+                  </div>
                 </div>
-                
-                <div class="contact-item enhanced">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Sales Department</h3>
-                        <p><strong>Primary:</strong> +98 990 941 4596</p>
-                        <p><strong>Secondary:</strong> +98 912 833 8734</p>
-                        <p>Available for wholesale and export orders</p>
-                    </div>
-                </div>
+              </div>
+              <div class="response-time">
+                <i class="fas fa-clock"></i>
+                <span>We respond within 24 hours</span>
+              </div>
             </div>
-
-            <!-- Partnership Benefits -->
-            <div class="partnership-benefits">
-                <h3>Why Choose FELUXE?</h3>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Only Veterinary Certified</span>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-chart-line"></i>
-                        <span>800% Absorption Capacity</span>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-industry"></i>
-                        <span>Vertical Integration</span>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-cubes"></i>
-                        <span>Bulk & Private Label Options</span>
-                    </div>
-                </div>
+            <div class="email-cta-icon">
+              <i class="fas fa-handshake"></i>
             </div>
+          </div>
         </div>
+
+        <!-- Contact Info Grid -->
+        <div class="contact-info-grid">
+          <div class="contact-item enhanced">
+            <div class="contact-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Tehran Branch Office</h3>
+              <p class="address">
+                Iran, Tehran, Nelson Mandela Blvd<br />
+                Dastgerdi Street, PAM Tower, 7th Floor<br />
+                Sanayeh Poodr Sangsar (SPS)
+              </p>
+              <p><strong>Phone:</strong> +98 21 88797832-3</p>
+            </div>
+          </div>
+
+          <div class="contact-item enhanced">
+            <div class="contact-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Factory Location</h3>
+              <p class="address">
+                Iran, Sorkheh to Semnan Road<br />
+                Sanayeh Poodr Sangsar Factory
+              </p>
+              <p class="highlight-text">Fully Integrated Production Facility</p>
+            </div>
+          </div>
+
+          <div class="contact-item enhanced">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Sales Department</h3>
+              <p><strong>Primary:</strong> +98 990 941 4596</p>
+              <p><strong>Secondary:</strong> +98 912 833 8734</p>
+              <p>Available for wholesale and export orders</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partnership Benefits -->
+        <div class="partnership-benefits">
+          <h3>Why Choose FELUXE?</h3>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <i class="fas fa-certificate"></i>
+              <span>Only Veterinary Certified</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-chart-line"></i>
+              <span>800% Absorption Capacity</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-industry"></i>
+              <span>Vertical Integration</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-cubes"></i>
+              <span>Bulk & Private Label Options</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 FELUXE Cat Litter by Feluxe Cat Litter. All rights reserved.</p>
-            <p>Premium Export Solutions | Worldwide Partnership Network | Iran's Only Veterinary Certified Cat Litter</p>
-        </div>
+      <div class="footer-content">
+        <p>
+          &copy; 2025 FELUXE Cat Litter by Feluxe Cat Litter. All rights
+          reserved.
+        </p>
+        <p>
+          Premium Export Solutions | Worldwide Partnership Network | Iran's Only
+          Veterinary Certified Cat Litter
+        </p>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script>
-        const catWrapper = document.getElementById('catWrapper');
-        const meow = document.getElementById('catMeow');
+      const catWrapper = document.getElementById('catWrapper');
+      const meow = document.getElementById('catMeow');
 
-        catWrapper.addEventListener('click', () => {
-            meow.currentTime = 0; // restart from beginning
-            meow.play().catch(e => console.log('Audio play failed:', e));
-        });
+      catWrapper.addEventListener('click', () => {
+        meow.currentTime = 0; // restart from beginning
+        meow.play().catch((e) => console.log('Audio play failed:', e));
+      });
 
-        // Copy email functionality
-        function copyEmail() {
-            navigator.clipboard.writeText('info@feluxe.com').then(() => {
-                const button = document.querySelector('.email-copy-btn');
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy email:', err);
-            });
-        }
+      // Copy email functionality
+      function copyEmail() {
+        navigator.clipboard
+          .writeText('info@feluxe.com')
+          .then(() => {
+            const button = document.querySelector('.email-copy-btn');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => {
+              button.innerHTML = originalText;
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error('Failed to copy email:', err);
+          });
+      }
     </script>
-</body>
+  </body>
 </html>

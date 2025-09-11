@@ -5,121 +5,129 @@
 
 /* CSS Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* CSS Variables for Brand Colors */
 :root {
-    --primary-purple: #6A2CA0;
-    --secondary-purple: #54208A;
-    --primary-blue: #0FA4A7;
-    --secondary-blue: #0B7E82;
-    
-    --text-dark: #333;
-    --text-medium: #555;
-    --text-light: #666;
-    
-    --background-light: #f8f6ff;
-    --background-white: #ffffff;
-    --background-gray: #f3f4f6;
-    
-    --shadow-light: rgba(160, 67, 140, 0.15);
-    --shadow-medium: rgba(160, 67, 140, 0.25);
-    --shadow-heavy: rgba(160, 67, 140, 0.4);
-    
-    --border-radius-small: 10px;
-    --border-radius-medium: 15px;
-    --border-radius-large: 20px;
-    --border-radius-xl: 25px;
-    
-    --transition-fast: 0.3s ease;
-    --transition-medium: 0.4s ease;
-    --transition-slow: 0.5s ease;
+  --primary-purple: #6a2ca0;
+  --secondary-purple: #54208a;
+  --primary-blue: #0fa4a7;
+  --secondary-blue: #0b7e82;
+
+  --text-dark: #333;
+  --text-medium: #555;
+  --text-light: #666;
+
+  --background-light: #f8f6ff;
+  --background-white: #ffffff;
+  --background-gray: #f3f4f6;
+
+  --shadow-light: rgba(160, 67, 140, 0.15);
+  --shadow-medium: rgba(160, 67, 140, 0.25);
+  --shadow-heavy: rgba(160, 67, 140, 0.4);
+
+  --border-radius-small: 10px;
+  --border-radius-medium: 15px;
+  --border-radius-large: 20px;
+  --border-radius-xl: 25px;
+
+  --transition-fast: 0.3s ease;
+  --transition-medium: 0.4s ease;
+  --transition-slow: 0.5s ease;
 }
 
 /* Base Typography */
 body {
-    font-family: 'Comfortaa', sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    overflow-x: hidden;
+  font-family: 'Comfortaa', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  overflow-x: hidden;
 }
 /* Container Class */
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* Section Title Styling */
 .section-title {
-    text-align: center;
-    font-size: 3rem;
-    color: var(--primary-blue);
-    margin-bottom: 4rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    position: relative;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
 }
 
 .section-title::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue));
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-purple),
+    var(--primary-blue)
+  );
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 /* Utility Classes */
 .fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Button Base Styles */
 .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: var(--transition-medium);
-    cursor: pointer;
-    border: none;
-    font-family: inherit;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-medium);
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    color: white;
-    box-shadow: 0 5px 15px var(--shadow-light);
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--primary-blue)
+  );
+  color: white;
+  box-shadow: 0 5px 15px var(--shadow-light);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px var(--shadow-heavy);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px var(--shadow-heavy);
 }
 
 .btn-secondary {
-    background: transparent;
-    border: 2px solid var(--primary-purple);
-    color: var(--primary-purple);
+  background: transparent;
+  border: 2px solid var(--primary-purple);
+  color: var(--primary-purple);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-purple);
-    color: white;
-    box-shadow: 0 12px 30px var(--shadow-heavy);
+  background: var(--primary-purple);
+  color: white;
+  box-shadow: 0 12px 30px var(--shadow-heavy);
 }
