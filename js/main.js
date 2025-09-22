@@ -330,7 +330,7 @@ function setupCatalogInteractions() {
     if (catalogThumbnail) {
         catalogThumbnail.addEventListener('click', function() {
             // Open catalog in new window
-            window.open('assets/pdfs/YASI CATALOUGE.pdf', '_blank');
+            window.open('assets/pdfs/feluxe_eng.pdf', '_blank');
         });
     }
     
@@ -676,7 +676,7 @@ function openPDFViewer() {
     pageNum = 1;
     
     // Load PDF
-    const pdfPath = 'assets/pdfs/YASI CATALOUGE.pdf';
+    const pdfPath = 'assets/pdfs/feluxe_eng.pdf';
     
     if (typeof pdfjsLib !== 'undefined') {
         pdfjsLib.getDocument(pdfPath).promise.then(function(pdfDoc_) {
@@ -856,7 +856,7 @@ function closePDFViewer() {
 function downloadPDF() {
     // Create download link
     const link = document.createElement('a');
-    link.href = 'assets/pdfs/YASI CATALOUGE.pdf';
+    link.href = 'assets/pdfs/feluxe_eng.pdf';
     link.download = 'Feluxe-Product-Catalog.pdf';
     link.target = '_blank';
     
