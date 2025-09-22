@@ -857,7 +857,7 @@ function downloadPDF() {
     // Create download link
     const link = document.createElement('a');
     link.href = 'assets/pdfs/feluxe_eng.pdf';
-    link.download = 'Feluxe-Product-Catalog.pdf';
+    link.download = 'feluxe_eng.pdf';
     link.target = '_blank';
     
     // Trigger download
